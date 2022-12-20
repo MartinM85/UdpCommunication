@@ -1,0 +1,16 @@
+version: "3"
+services:
+  udplistener:
+    build:
+      context: .
+      dockerfile: DockerfileUdpListener
+    volumes:
+      - C:\Temp\UdpCommunication\UdpListener:/opt/mm/udplistener
+    networks:
+      static-network:
+        ipv4_address: 172.21.0.4
+networks:
+  static-network:
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16

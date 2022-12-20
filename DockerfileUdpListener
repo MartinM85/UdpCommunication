@@ -1,0 +1,6 @@
+FROM debian:latest
+
+WORKDIR /opt/mm/udplistener
+#Add missing env property
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+ENTRYPOINT ["./UdpListener","42123"]

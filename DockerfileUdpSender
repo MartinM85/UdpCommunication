@@ -1,0 +1,7 @@
+FROM debian:latest
+
+WORKDIR /opt/mm/udpsender
+#Add missing env property
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+#Parameters: ip of udp listener and its port
+ENTRYPOINT ["./UdpSender","172.21.0.4","42123"]
